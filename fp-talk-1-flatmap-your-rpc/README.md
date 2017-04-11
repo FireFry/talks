@@ -1,4 +1,4 @@
-[Flatmap your RPC!](fp-talk-1-flatmap-your-rpc/slides-flatmap-your-rpc.pdf)
+[Flatmap your RPC!](slides-flatmap-your-rpc.pdf)
 =================
 
 This talk demonstrates the best practices of building JVM servers with maximum CPU utilization and highly loaded IO.
@@ -13,8 +13,8 @@ This talk includes a demo project that demonstrates the benefits of writing non-
 
 Two packages contain the same toy project implementation
 
-- [vlad.fp.services.synchronous](fp-talk-1-flatmap-your-rpc/demo/src/main/java/vlad/fp/services/synchronous) - with blocking RPC simulation
-- [vlad.fp.services.asynchronous](fp-talk-1-flatmap-your-rpc/demo/src/main/java/vlad/fp/services/asynchronous) - with non-blocking RPC simulation
+- [vlad.fp.services.synchronous](demo/src/main/java/vlad/fp/services/synchronous) - with blocking RPC simulation
+- [vlad.fp.services.asynchronous](demo/src/main/java/vlad/fp/services/asynchronous) - with non-blocking RPC simulation
 
 After running each project individually and comparing their output it's easy to see the benefits of the asynchronous approach.
 
@@ -44,7 +44,7 @@ Throughput: 5975 req/sec
 
 There are two main classes that demonstrate the code difference between synchronous and asynchronous approaches:
 
-- [`FrontendServer.java`](fp-talk-1-flatmap-your-rpc/demo/src/main/java/vlad/fp/services/synchronous/server/FrontendServer.java)
-- [`FrontendServerF.java`](fp-talk-1-flatmap-your-rpc/demo/src/main/java/vlad/fp/services/asynchronous/server/FrontendServerF.java) _(formatted as close as possible to the `FrontendServer.java`)_
+- [`FrontendServer.java`](demo/src/main/java/vlad/fp/services/synchronous/server/FrontendServer.java)
+- [`FrontendServerF.java`](demo/src/main/java/vlad/fp/services/asynchronous/server/FrontendServerF.java) _(formatted as close as possible to the `FrontendServer.java`)_
 
-There is also a cool [`lib`](fp-talk-1-flatmap-your-rpc/demo/src/main/java/vlad/fp/lib) package that contains functional paradigms implemented in Java (mostly ported from [scalaz](https://github.com/scalaz/scalaz)). Although they look horrible, they do their job and are as pure as they could be.
+There is also a cool [`lib`](demo/src/main/java/vlad/fp/lib) package that contains functional paradigms implemented in Java (mostly ported from [scalaz](https://github.com/scalaz/scalaz)). Although they look horrible, they do their job and are as pure as they could be.
